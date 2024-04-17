@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "519554037946",
+    "project_id": "seemeds-db771",
+    "storage_bucket": "seemeds-db771.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519554037946:android:1b1330054a511a81406a83",
+        "android_client_info": {
+          "package_name": "com.example.seemeds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519554037946-tfogdrjv7ik78cupv2klhm3oafjq98rd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA26s_tgrR8ckXF_zqxZ59_dzwNcDSRcPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519554037946-tfogdrjv7ik78cupv2klhm3oafjq98rd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
