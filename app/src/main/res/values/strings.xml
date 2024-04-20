@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">SeeMeds</string>
+    <string name="register_now">register now</string>
+    <string name="new_member">new member?</string>
+    <string name="log_in">log in</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
+    <string name="or">OR</string>
+    <string name="tab_to_continue">tab to continue</string>
+    <string name="login">log in</string>
+    <string name="already_a_member">already a member?</string>
+    <string name="next">NEXT</string>
 </resources>
