@@ -40,8 +40,9 @@ public class CameraFragment extends Fragment {
 
             //onclick listener for the ButtonPicture to view camera
             buttonPicture.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) { //create new intent to swap between 2 activities(button to camera)
+
+                @Override                //create new intent to swap between 2 activities(button to camera)
+                public void onClick(View v) {
 
                     Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);  // media store is a class that provides access to the content, like images, audio, video
                     startActivityForResult(cameraIntent, REQUEST_CODE);
@@ -51,18 +52,18 @@ public class CameraFragment extends Fragment {
             return view;
         }
 
-        @Override         //this method is called when user takes a photo
-        public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-            if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
-                  //thumbnail of  the photo user took (compressed)
-                 Bitmap photo = ((Bitmap)data.getExtras().get("data"));
-                 imageViewPicture.setImageBitmap(photo);
-            } else {
-                //if user cancels the camera
-                Toast.makeText(getActivity(), " Cancelled the camera", Toast.LENGTH_SHORT).show();
-                super.onActivityResult(requestCode, resultCode, data);
-            }
-        }
+//        @Override         //this method is called when user takes a photo
+//        public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//            if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
+//                  //thumbnail of  the photo user took (compressed)
+//                 Bitmap photo = ((Bitmap)data.getExtras().get("data"));
+//                 imageViewPicture.setImageBitmap(photo);
+//            } else {
+//                //if user cancels the camera
+//                Toast.makeText(getActivity(), " Cancelled the camera", Toast.LENGTH_SHORT).show();
+//                super.onActivityResult(requestCode, resultCode, data);
+//            }
+//        }
 
 
 
