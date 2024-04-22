@@ -1,19 +1,15 @@
 package com.example.seemeds;
 
-import androidx.annotation.Nullable;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.seemeds.databinding.ActivityMainBinding;
 
@@ -22,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     // RETURN CODE "22 " AFTER USER TAKES PHOTO IN CAMERA APP, SO OUT APPLICATION KNOWS WHAT PHOTO USER TOOK
     private static final int REQUEST_CODE = 22;
 
-    Button buttonPicture;
+    Button buttonPicture, mRegisterNowbtn;
+
     ImageView imageViewPicture;
 
     //binding for the main activity
@@ -32,12 +29,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+       // mRegisterNowbtn = (Button) findViewById(R.id.registerNowBtn);
 
         //this section is for binding (needs to be first in oncreate method to view the layout)
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new CameraFragment()); //replace frame with the camera when app starts (default page)
 
+        binding.registerNowBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Register.class);
+                startActivity(intent);
+            }
+        });
 
         //whenever user selects item we will get it in 'item' variable
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -64,13 +71,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-//
+
+
+
+    //
     //replace frame layout with fragment method
     private void replaceFragment(Fragment fragment) {
 
         FragmentManager fragmentManager = getSupportFragmentManager(); //get fragment manager
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction(); //begin transaction
-        fragmentTransaction.replace(R.id.frame_layout, fragment); //replace frame layout with fragment here
         fragmentTransaction.commit(); //commit the transaction
 
     }
