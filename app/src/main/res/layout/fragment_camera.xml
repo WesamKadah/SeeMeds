@@ -18,18 +18,16 @@
 
 <!--    />-->
 
-    <Button
-        android:id="@+id/buttoncamera1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="27dp"
-        android:text="Click here for camera" />
+<!--    <Button-->
+<!--        android:id="@+id/buttoncamera1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginTop="27dp"-->
+<!--        android:text="Click here for camera" />-->
 
     <ImageView
         android:id="@+id/imageview1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/buttoncamera1"
-        />
+        android:layout_height="match_parent" />
 </RelativeLayout>

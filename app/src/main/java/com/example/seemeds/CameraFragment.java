@@ -35,24 +35,31 @@ public class CameraFragment extends Fragment {
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_camera, container, false);
 
-            buttonPicture = view.findViewById(R.id.buttoncamera1);
+//         buttonPicture = view.findViewById(R.id.buttoncamera1); //we canceled this button cause we want camera to open directly
             imageViewPicture = view.findViewById(R.id.imageview1);
 
-            //onclick listener for the ButtonPicture to view camera
-            buttonPicture.setOnClickListener(new View.OnClickListener() {
-
-                @Override                //create new intent to swap between 2 activities(button to camera)
-                public void onClick(View v) {
-
-                    Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);  // media store is a class that provides access to the content, like images, audio, video
-                    startActivityForResult(cameraIntent, REQUEST_CODE);
-                }
-            });
+            // Open the camera as soon as the fragment is created
+            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);  // media store is a class that provides access to the content, like images, audio, video
+            startActivityForResult(cameraIntent, REQUEST_CODE);
 
             return view;
+
+
+            //onclick listener for the ButtonPicture to view camera (CANCELLED)
+
+//            buttonPicture.setOnClickListener(new View.OnClickListener() {
+
+//                @Override           //create new intent to swap between 2 activities(button to camera)
+//                public void onClick(View v) {
+//
+//                    Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);  // media store is a class that provides access to the content, like images, audio, video
+//                    startActivityForResult(cameraIntent, REQUEST_CODE);
+//                }
+//            });
+
         }
 
-//        @Override         //this method is called when user takes a photo
+//        @Override         //this method is called when user takes a photo -this returns the photo taken-(CANCELLED)
 //        public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 //            if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
 //                  //thumbnail of  the photo user took (compressed)

@@ -19,12 +19,6 @@ import com.example.seemeds.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    // RETURN CODE "22 " AFTER USER TAKES PHOTO IN CAMERA APP, SO OUT APPLICATION KNOWS WHAT PHOTO USER TOOK
-    private static final int REQUEST_CODE = 22;
-
-    Button buttonPicture;
-    ImageView imageViewPicture;
-
     //binding for the main activity
     private
     ActivityMainBinding binding;     //setting up binding for the main activity
