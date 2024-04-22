@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager(); //get fragment manager
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction(); //begin transaction
+        fragmentTransaction.replace(R.id.frame_layout, fragment); //replace the fragment
         fragmentTransaction.commit(); //commit the transaction
 
     }
