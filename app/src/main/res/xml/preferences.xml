@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="check_box_preference_1"
-        android:title="Check box preference" />
+    <!--    Notification-->
+    <SwitchPreferenceCompat
+        app:key="notifications"
+        app:title="Enable message notifications"/>
+
+
+    <!--    Feedback-->
+    <Preference
+        app:key="feedback"
+        app:title="Send feedback"
+        app:summary="Report technical issues or suggest new features"/>
+
+
+    <!--    DarkMode-->
     <SwitchPreference
+        app:title="Dark Mode"
         android:defaultValue="false"
         android:key="switch_preference_1"
         android:title="Switch preference" />
-    <PreferenceCategory android:title="Preference category">
 
-    </PreferenceCategory>
+<!--    <include android:key="account_settings" layout="@xml/account_preferences" />-->
+
+    <!--    Account section-->
+
+       <PreferenceScreen
+       app:key="account_settings"
+       app:title="Account Settings">
+       <EditTextPreference
+           android:key="username"
+           android:title="Username"
+           android:summary="Enter your username"
+           android:dialogTitle="Enter your username" />
+       <EditTextPreference
+           android:key="password"
+           android:title="Password"
+           android:summary="Enter your password"
+           android:inputType="textPassword"
+           android:dialogTitle="Enter your password" />
+   </PreferenceScreen>
+
+
+
+
+
 </PreferenceScreen>
 

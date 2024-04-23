@@ -3,6 +3,7 @@ package com.example.seemeds;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
     EditText mFulLName, mNumberPhone, mEmail, mPassword;
-    Button mResgisterBtn;
+    Button mResisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
@@ -30,13 +31,14 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("RegisterActivity", "onCreate called");
         setContentView(R.layout.activity_register);
 
         mFulLName = findViewById(R.id.fullName);
         mNumberPhone = findViewById(R.id.numberPhone);
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
-        mResgisterBtn = findViewById(R.id.login);
+        mResisterBtn = findViewById(R.id.login);
 
         fAuth = FirebaseAuth.getInstance();
         // progressBar =
@@ -46,7 +48,7 @@ public class Register extends AppCompatActivity {
             finish();
         }
 
-        mResgisterBtn.setOnClickListener(new View.OnClickListener() {
+        mResisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

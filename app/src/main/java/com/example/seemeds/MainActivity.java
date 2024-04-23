@@ -1,19 +1,11 @@
 package com.example.seemeds;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import com.example.seemeds.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,12 +73,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //we need a fragment manager to display multi fragments(make transactions)
-                FragmentManager fragmentManager = getSupportFragmentManager(); //get me any supported  manager
+                FragmentManager fragmentManager = getSupportFragmentManager();
 
-                fragmentManager.beginTransaction() //begin transaction
-                        .replace(R.id.fragmentContainerView2, SettingsFragment.class, null) //replace frag-container with fragment clicked
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView2, SettingsFragment.class, null)
                         .setReorderingAllowed(true)
-                        .addToBackStack("name") // Name can be null
+                        .addToBackStack("name")
                         .commit();
             }
         });
@@ -98,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 //        //this section is for binding (needs to be first in oncreate method to view the layout)
 //        binding = ActivityMainBinding.inflate(getLayoutInflater());
 //        setContentView(binding.getRoot());
+
 //        replaceFragment(new CameraFragment()); //replace frame with the camera when app starts (default page)
 
 
